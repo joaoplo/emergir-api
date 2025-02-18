@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/EMERGIR_DIGITAL
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    placeholder-replacement: false
+    schemas: EMERGIR_DIGITAL
+    table: flyway_schema_history
