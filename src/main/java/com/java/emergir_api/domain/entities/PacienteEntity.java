@@ -1,5 +1,6 @@
 package com.java.emergir_api.domain.entities;
 
+import com.java.emergir_api.domain.FichaAnamneseEntity;
 import com.java.emergir_api.domain.enumeration.ModalidadeAtendimentoEnum;
 import com.java.emergir_api.domain.enumeration.PlanoPacienteEnum;
 import com.java.emergir_api.domain.enumeration.SituacaoPacienteEnum;
@@ -7,6 +8,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -45,4 +47,10 @@ public class PacienteEntity{
     @Column( name = "SITUACAO", nullable = false )
     @Enumerated( EnumType.STRING )
     private SituacaoPacienteEnum situacao;
+
+    @OneToMany( mappedBy = "paciente", fetch = FetchType.LAZY )
+    private List<EvolucaoClinicaEntity> evolucoesClinicas;
+
+    @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private FichaAnamneseEntity fichaAnamnese;
 }
