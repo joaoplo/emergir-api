@@ -1,6 +1,5 @@
-package com.java.emergir_api.domain;
+package com.java.emergir_api.domain.entities;
 
-import com.java.emergir_api.domain.entities.PacienteEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 

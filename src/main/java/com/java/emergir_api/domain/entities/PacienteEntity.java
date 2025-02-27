@@ -1,6 +1,5 @@
 package com.java.emergir_api.domain.entities;
 
-import com.java.emergir_api.domain.FichaAnamneseEntity;
 import com.java.emergir_api.domain.enumeration.ModalidadeAtendimentoEnum;
 import com.java.emergir_api.domain.enumeration.PlanoPacienteEnum;
 import com.java.emergir_api.domain.enumeration.SituacaoPacienteEnum;
@@ -50,6 +49,9 @@ public class PacienteEntity{
 
     @OneToMany( mappedBy = "paciente", fetch = FetchType.LAZY )
     private List<EvolucaoClinicaEntity> evolucoesClinicas;
+
+    @OneToMany( mappedBy = "paciente", fetch = FetchType.LAZY )
+    private List<AvaliacaoPsicologicaEntity> avaliacaoPsicologica;
 
     @OneToOne(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private FichaAnamneseEntity fichaAnamnese;

@@ -26,6 +26,6 @@ public class EvolucaoClinicaEntity{
     private Long idPaciente;
 
     @ManyToOne
-    @JoinColumn(name = "IDT_PACIENTE", nullable = false)
+    @JoinColumn( name = "IDT_PACIENTE", nullable = false )
     private PacienteEntity paciente;
 }
