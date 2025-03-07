@@ -12,7 +12,7 @@ public class EvolucaoClinicaEntity{
 
     @Id
     @Column( name = "IDT_EVOLUCOES_CLINICAS" )
-    @SequenceGenerator( name = "SEQ_EVOLUCOES_CLINICAS", sequenceName = "SEQ_EVOLUCOES_CLINICAS", allocationSize = 1 , schema = "CMC_DIGITAL" )
+    @SequenceGenerator( name = "SEQ_EVOLUCOES_CLINICAS", sequenceName = "SEQ_EVOLUCOES_CLINICAS", allocationSize = 1 , schema = "EMERGIR_DIGITAL" )
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "SEQ_EVOLUCOES_CLINICAS" )
     private Long id;
 
@@ -26,6 +26,6 @@ public class EvolucaoClinicaEntity{
     private Long idPaciente;
 
     @ManyToOne
-    @JoinColumn(name = "IDT_PACIENTE", nullable = false)
+    @JoinColumn( name = "IDT_PACIENTE", nullable = false )
     private PacienteEntity paciente;
 }

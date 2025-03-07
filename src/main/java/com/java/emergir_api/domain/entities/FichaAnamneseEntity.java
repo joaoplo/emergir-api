@@ -1,6 +1,5 @@
-package com.java.emergir_api.domain;
+package com.java.emergir_api.domain.entities;
 
-import com.java.emergir_api.domain.entities.PacienteEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,7 +12,7 @@ public class FichaAnamneseEntity{
 
     @Id
     @Column( name = "IDT_FICHAS_ANAMNESE" )
-    @SequenceGenerator( name = "SEQ_FICHAS_ANAMNESE", sequenceName = "SEQ_FICHAS_ANAMNESE", allocationSize = 1 , schema = "CMC_DIGITAL" )
+    @SequenceGenerator( name = "SEQ_FICHAS_ANAMNESE", sequenceName = "SEQ_FICHAS_ANAMNESE", allocationSize = 1 , schema = "EMERGIR_DIGITAL" )
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "SEQ_FICHAS_ANAMNESE" )
     private Long id;
 
@@ -21,7 +20,7 @@ public class FichaAnamneseEntity{
     private String descricao;
 
     @Column( name = "DT_REGISTRO", nullable = false )
-    private LocalDate dtRegistro;
+    private LocalDate dataRegistro;
 
     @Column( name = "IDT_PACIENTE", nullable = false, insertable = false, updatable = false )
     private Long idPaciente;
