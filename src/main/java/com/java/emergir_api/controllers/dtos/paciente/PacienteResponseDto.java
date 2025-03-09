@@ -5,6 +5,7 @@ import com.java.emergir_api.domain.enumeration.ModalidadeAtendimentoEnum;
 import com.java.emergir_api.domain.enumeration.PlanoPacienteEnum;
 import com.java.emergir_api.domain.enumeration.SituacaoPacienteEnum;
 
+import javax.annotation.Nullable;
 import java.time.LocalDate;
 
 public record PacienteResponseDto( Long id,
@@ -12,6 +13,7 @@ public record PacienteResponseDto( Long id,
                                    String nome,
                                    LocalDate dataNascimento,
                                    LocalDate dataInicio,
+                                   @Nullable LocalDate dataTermino,
                                    ModalidadeAtendimentoEnum atendimento,
                                    PlanoPacienteEnum plano,
                                    SituacaoPacienteEnum situacao,
